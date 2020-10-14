@@ -1,0 +1,7 @@
+/vendor/
+/var/
+.idea/
+.php_cs.cache
+deptrac.phar
+.deptrac.cache
+phpunit.xml

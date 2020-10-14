@@ -1,0 +1,38 @@
+{
+    "name": "zerai/project-4-compost-d-library",
+    "description": "example project",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Zerai Teclai",
+            "email": "teclaizerai@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "beberlei/assert": "^3.2",
+        "phpstan/phpstan-phpunit": "^0.12.16",
+        "ramsey/uuid": "^4.1"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "phpstan/phpstan": "^0.12",
+        "phpunit/phpunit": "^7.5"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "CompostD\\": "compostD/src/",
+            "Restaurant\\": "restaurant/src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CompostD\\Tests\\": "compostD/tests/",
+            "Restaurant\\Tests\\": "restaurant/tests/"
+        }
+    }
+}
