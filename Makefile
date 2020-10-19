@@ -22,7 +22,7 @@ deptrac-install:
 
 .PHONY: architecture-check
 architecture-check:
-	php deptrac.phar analyze ci/deptrac/depfile.yaml
+	php deptrac.phar analyze ci/deptrac/depfile-arch.yaml
 
 .PHONY: cs-check
 cs-check:

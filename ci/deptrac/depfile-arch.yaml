@@ -1,0 +1,75 @@
+paths:
+  - ./restaurant/src
+exclude_files:
+  - .*test.*
+  - .*Test.*
+layers:
+  - name: SharedKernelDomain
+    collectors:
+      - type: directory
+        regex: SharedKernel/Domain/.*
+  - name: SharedKernelInfrastructure
+    collectors:
+      - type: directory
+        regex: SharedKernel/Infrastructure/.*
+  - name: AllowedDependenciesInSharedKernelDomain
+    collectors:
+      - type: bool
+        must:
+          - type: className
+            regex: ^Ramsey\\Uuid\\UuidInterface
+  - name: Domain
+    collectors:
+      - type: directory
+        regex: src/Domain/.*
+  - name: AllowedDependenciesInDomain
+    collectors:
+      - type: bool
+        must:
+          - type: className
+            regex: ^Assert\\.*
+
+  - name: Application
+    collectors:
+      - type: directory
+        regex: src/Application/.*
+
+  - name: Infrastructure
+    collectors:
+      - type: directory
+        regex: src/Infrastructure/.*
+
+  - name: Vendor
+    collectors:
+      - type: bool
+        must:
+          - type: className
+            regex: .+\\.*
+        must_not:
+          - type: className
+            regex: ^Restaurant\\.*
+          - type: className
+            regex: ^Assert\\.*
+          - type: className
+            regex: ^Ramsey\\Uuid\\UuidInterface
+#          - type: className
+#            regex: ^Psr\\.*
+
+
+ruleset:
+  SharedKernelDomain:
+    - AllowedDependenciesInSharedKernelDomain
+  SharedKernelInfrastructure:
+    - SharedKernelDomain
+    - AllowedDependenciesInSharedKernelDomain
+    - Vendor
+  Domain:
+    - SharedKernelDomain
+    - AllowedDependenciesInDomain
+  Application:
+    - Domain
+  Infrastructure:
+    - SharedKernelDomain
+    - SharedKernelInfrastructure
+    - Domain
+    - Application
