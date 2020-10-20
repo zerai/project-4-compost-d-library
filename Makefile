@@ -42,4 +42,4 @@ test-coverage:
 
 .PHONY: stan
 stan:
-	php vendor/bin/phpstan analyse restaurant/ --level max
+	php vendor/bin/phpstan analyse

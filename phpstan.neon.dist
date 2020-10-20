@@ -1,0 +1,11 @@
+parameters:
+    level: max
+    paths:
+        - restaurant/
+        - compostD/tests/
+    excludes_analyse:
+        - var/
+
+includes:
+    - phpstan-baseline.neon
+    - vendor/phpstan/phpstan-phpunit/extension.neon
