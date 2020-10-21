@@ -1,5 +1,6 @@
 paths:
   - ./restaurant/src
+  - ./compostD/src
 exclude_files:
   - .*test.*
   - .*Test.*
@@ -28,7 +29,6 @@ layers:
         must:
           - type: className
             regex: ^Assert\\.*
-
   - name: Application
     collectors:
       - type: directory
@@ -49,12 +49,18 @@ layers:
           - type: className
             regex: ^Restaurant\\.*
           - type: className
+            regex: ^CompostD\\.*
+          - type: className
             regex: ^Assert\\.*
           - type: className
             regex: ^Ramsey\\Uuid\\UuidInterface
 #          - type: className
 #            regex: ^Psr\\.*
 
+  - name: CompostD
+    collectors:
+      - type: className
+        regex: ^CompostD\\Aggregate\\.*
 
 ruleset:
   SharedKernelDomain:
@@ -66,6 +72,7 @@ ruleset:
   Domain:
     - SharedKernelDomain
     - AllowedDependenciesInDomain
+    - CompostD
   Application:
     - Domain
   Infrastructure:

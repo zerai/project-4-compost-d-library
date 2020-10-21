@@ -4,8 +4,13 @@
 namespace Restaurant\Domain\Model\Table;
 
 
+use CompostD\Aggregate\StateBasedAggregateBehaviour;
+use Restaurant\Domain\Model\Table\Event\TableOpened;
+
 class Table
 {
+    use StateBasedAggregateBehaviour;
+
     private TableId $id;
     private int $tableNumber;
     private string $waiter;
@@ -20,6 +25,10 @@ class Table
         $table->id = $tableId;
         $table->tableNumber = $tableNumber;
         $table->waiter = $waiter;
+
+        $table->recordThat(
+            new TableOpened($tableId, $tableNumber, $waiter)
+        );
 
         return $table;
     }
