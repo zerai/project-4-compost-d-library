@@ -27,14 +27,16 @@
         "psr-4": {
             "CompostD\\": "compostD/src/",
             "Restaurant\\": "restaurant/src/",
-            "Restaurant\\Booking\\": "restaurant/booking/src/"
+            "Restaurant\\Booking\\": "restaurant/booking/src/",
+            "Restaurant\\SharedKernel\\": "restaurant/sharedKernel/src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
             "CompostD\\Tests\\": "compostD/tests/",
             "Restaurant\\Tests\\": "restaurant/tests/",
-            "Restaurant\\Booking\\Tests\\": "restaurant/booking/tests/"
+            "Restaurant\\Booking\\Tests\\": "restaurant/booking/tests/",
+            "Restaurant\\SharedKernel\\Tests\\": "restaurant/sharedKernel/tests/"
         }
     }
 }

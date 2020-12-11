@@ -18,6 +18,9 @@
         <testsuite name="booking">
             <directory suffix="Test.php">restaurant/booking/tests</directory>
         </testsuite>
+        <testsuite name="shared-kernel">
+            <directory suffix="Test.php">restaurant/sharedKernel/tests</directory>
+        </testsuite>
     </testsuites>
 
     <filter>
@@ -25,6 +28,7 @@
             <directory suffix=".php">restaurant/src</directory>
             <directory suffix=".php">compostD/src</directory>
             <directory suffix=".php">restaurant/booking/src</directory>
+            <directory suffix=".php">restaurant/sharedKernel/src</directory>
         </whitelist>
     </filter>
 </phpunit>

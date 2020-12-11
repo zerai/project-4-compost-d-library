@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Restaurant\Tests\SharedKernel\Infrastructure;
+namespace Restaurant\SharedKernel\Tests\Infrastructure;
 
 use PHPUnit\Framework\TestCase;
 use Ramsey\Uuid\Uuid;

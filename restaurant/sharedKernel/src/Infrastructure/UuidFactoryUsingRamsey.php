@@ -2,7 +2,6 @@
 
 namespace Restaurant\SharedKernel\Infrastructure;
 
-
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
 use Restaurant\SharedKernel\Domain\UuidFactory;
