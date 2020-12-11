@@ -1,12 +1,10 @@
 <?php declare(strict_types=1);
 
+namespace Restaurant\Core\Tests\Table;
 
-namespace Restaurant\Tests\Table;
-
-
-use PHPStan\Testing\TestCase;
-use Restaurant\Domain\Model\Table\TableId;
-use Restaurant\Tests\Fixture\UuidFixture;
+use PHPUnit\Framework\TestCase;
+use Restaurant\Core\Domain\Model\Table\TableId;
+use Restaurant\Core\Tests\Fixture\UuidFixture;
 
 class TableIdTest extends TestCase
 {

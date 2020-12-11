@@ -1,11 +1,10 @@
 <?php declare(strict_types=1);
 
-
-namespace Restaurant\Domain\Model\Table;
-
+namespace Restaurant\Core\Domain\Model\Table;
 
 use CompostD\Aggregate\StateBasedAggregateBehaviour;
-use Restaurant\Domain\Model\Table\Event\TableOpened;
+use Restaurant\Core\Domain\Model\Table\Event\TableOpened;
+
 
 class Table
 {

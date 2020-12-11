@@ -1,16 +1,15 @@
 <?php declare(strict_types=1);
 
-
-namespace Restaurant\Tests\Table;
-
+namespace Restaurant\Core\Tests\Table;
 
 use PHPUnit\Framework\TestCase;
-use Restaurant\Domain\Model\Table\Factory\TableIdentifierGenerator;
-use Restaurant\Domain\Model\Table\TableId;
+use Restaurant\Core\Domain\Model\Table\Factory\TableIdentifierGenerator;
+use Restaurant\Core\Domain\Model\Table\TableId;
 use Restaurant\SharedKernel\Infrastructure\UuidFactoryUsingRamsey;
 
 class TableIdentifierGeneratorTest extends TestCase
 {
+    /** @var TableIdentifierGenerator  */
     private $identifierGenerator;
 
     protected function setUp(): void

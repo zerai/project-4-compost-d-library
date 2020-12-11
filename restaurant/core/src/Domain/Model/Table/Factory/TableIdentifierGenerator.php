@@ -1,10 +1,8 @@
 <?php declare(strict_types=1);
 
+namespace Restaurant\Core\Domain\Model\Table\Factory;
 
-namespace Restaurant\Domain\Model\Table\Factory;
-
-
-use Restaurant\Domain\Model\Table\TableId;
+use Restaurant\Core\Domain\Model\Table\TableId;
 use Restaurant\SharedKernel\Domain\UuidFactory;
 
 class TableIdentifierGenerator

@@ -1,7 +1,6 @@
-<?php
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
-namespace Restaurant\Domain\Model\Table;
+namespace Restaurant\Core\Domain\Model\Table;
 
 interface TableRepository
 {

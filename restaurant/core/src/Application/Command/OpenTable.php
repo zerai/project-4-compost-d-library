@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace Restaurant\Application\Command;
+namespace Restaurant\Core\Application\Command;
 
-use Restaurant\Domain\Model\Table\TableId;
+use Restaurant\Core\Domain\Model\Table\TableId;
 
 class OpenTable
 {

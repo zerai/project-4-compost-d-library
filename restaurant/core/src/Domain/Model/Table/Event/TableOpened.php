@@ -1,10 +1,8 @@
 <?php declare(strict_types=1);
 
+namespace Restaurant\Core\Domain\Model\Table\Event;
 
-namespace Restaurant\Domain\Model\Table\Event;
-
-
-use Restaurant\Domain\Model\Table\TableId;
+use Restaurant\Core\Domain\Model\Table\TableId;
 
 class TableOpened
 {

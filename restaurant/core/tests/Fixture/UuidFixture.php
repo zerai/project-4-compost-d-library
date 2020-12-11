@@ -1,8 +1,6 @@
 <?php declare(strict_types=1);
 
-
-namespace Restaurant\Tests\Fixture;
-
+namespace Restaurant\Core\Tests\Fixture;
 
 class UuidFixture
 {
