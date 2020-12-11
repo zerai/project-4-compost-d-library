@@ -15,12 +15,16 @@
         <testsuite name="compost">
             <directory suffix="Test.php">compostD/tests</directory>
         </testsuite>
+        <testsuite name="booking">
+            <directory suffix="Test.php">restaurant/booking/tests</directory>
+        </testsuite>
     </testsuites>
 
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">restaurant/src</directory>
             <directory suffix=".php">compostD/src</directory>
+            <directory suffix=".php">restaurant/booking/src</directory>
         </whitelist>
     </filter>
 </phpunit>
