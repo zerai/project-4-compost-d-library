@@ -5,6 +5,8 @@ on:
     branches: [ main, feature/**, bugfix/** ]
   pull_request:
     branches: [ main ]
+env:
+  COVERAGE: '0'
 
 jobs:
   phpunit:
@@ -14,10 +16,10 @@ jobs:
       matrix:
         php:
           - '7.4'
-          #- '8.0'
+          - '8.0'
         include:
           - php: '7.4'
-            coverage: false
+            coverage: pcov
         dependency-version: [prefer-lowest, prefer-stable]
       fail-fast: false
     steps:
@@ -27,12 +29,12 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
-          coverage: pcov
+          coverage: ${{ matrix.coverage }}
           tools: composer:v1
       - name: Install Composer dependencies
         run: composer update --${{ matrix.dependency-version }} --prefer-dist --no-progress --no-suggest --ansi
-      - name: Enable code coverage
-        if: matrix.coverage
+      - name: Enable code coverage for PHP-7.4
+        if: ${{ matrix.php == '7.4' && matrix.dependency-version == 'prefer-stable'}}
         run: echo "COVERAGE=1" >> $GITHUB_ENV
       - name: Run PHPUnit tests
         run: |
@@ -42,3 +44,12 @@ jobs:
           else
             vendor/bin/phpunit --colors=always
           fi
+      - name: Upload coverage results to Codecov
+        if: ${{ matrix.php == '7.4' && matrix.dependency-version == 'prefer-stable'}}
+        uses: codecov/codecov-action@v1
+        with:
+          directory: ./reports/phpunit/
+          name: phpunit-php${{ matrix.php }}
+          flags: phpunit-test
+          fail_ci_if_error: true
+        continue-on-error: true
