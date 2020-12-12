@@ -1,0 +1,39 @@
+paths:
+  - ./restaurant
+
+exclude_files:
+  - .*tests.*
+  - .*Test.*
+
+layers:
+  - name: SharedKernelDomain
+    collectors:
+      - type: directory
+        regex: restaurant/sharedKernel/Domain/.*
+
+  - name: SharedKernelInfrastructure
+    collectors:
+      - type: directory
+        regex: restaurant/sharedKernel/Infrastructure/.*
+
+  - name: Core
+    collectors:
+      - type: directory
+        regex: restaurant/core/.*
+
+  - name: Booking
+    collectors:
+      - type: directory
+        regex: restaurant/booking/.*
+
+ruleset:
+  SharedKernelDomain:
+    - AllowedDependenciesInSharedKernelDomain
+  SharedKernelInfrastructure:
+    - SharedKernelDomain
+  Core:
+    - SharedKernelDomain
+    - SharedKernelInfrastructure
+  Booking:
+    - SharedKernelDomain
+    - SharedKernelInfrastructure

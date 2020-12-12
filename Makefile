@@ -1,18 +1,5 @@
 SHELL=/bin/bash
 
-HOSTNAME:=foobar.restaurant.localhost
-HOSTS_ENTRY:=127.0.0.1 ${HOSTNAME}
-
-.PHONY: hosts-entry
-ifeq ($(PLATFORM), $(filter $(PLATFORM), Darwin Linux))
-hosts-entry:
-	(grep "$(HOSTS_ENTRY)" /etc/hosts) || echo '$(HOSTS_ENTRY)' | sudo tee -a /etc/hosts
-else
-hosts-entry:
-	$(warning Make sure to add "${HOSTS_ENTRY}" to your operating system's hosts file)
-endif
-
-
 .PHONY: help
 help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
@@ -25,7 +12,11 @@ deptrac-install: ## Install deptrac tool
 
 .PHONY: architecture-check
 architecture-check: ## Run deptrac  (architecture check)
-	php deptrac.phar analyze ci/deptrac/depfile-arch.yaml
+#	php deptrac.phar analyze ci/deptrac/depfile-arch.yaml
+	php deptrac.phar analyze ci/deptrac/shared-kernel.yaml
+	php deptrac.phar analyze ci/deptrac/core.yaml
+	php deptrac.phar analyze ci/deptrac/booking.yaml
+	php deptrac.phar analyze ci/deptrac/application.yaml
 
 .PHONY: cs-check
 cs-check: ## Run code style analysis (check and report)

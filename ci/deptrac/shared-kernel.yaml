@@ -1,0 +1,47 @@
+paths:
+  - ./restaurant/sharedKernel/src
+
+exclude_files:
+  - .*test.*
+  - .*Test.*
+
+layers:
+  - name: SharedKernelDomain
+    collectors:
+      - type: directory
+        regex: SharedKernel/Domain/.*
+
+  - name: SharedKernelInfrastructure
+    collectors:
+      - type: directory
+        regex: Restaurant/SharedKernel/Infrastructure/.*
+
+  - name: Ramsey
+    collectors:
+      - type: bool
+        must:
+          - type: className
+            regex: ^Ramsey\\Uuid\\.*
+
+  - name: Vendor
+    collectors:
+      - type: bool
+        must:
+          - type: className
+            regex: .+\\.*
+        must_not:
+          - type: className
+            regex: ^Restaurant\\.*
+          - type: className
+            regex: ^CompostD\\.*
+          - type: className
+            regex: ^Assert\\.*
+          - type: className
+            regex: ^Ramsey\\Uuid\\.*
+
+ruleset:
+  SharedKernelDomain:
+    - Ramsey
+  SharedKernelInfrastructure:
+    - SharedKernelDomain
+    - Ramsey

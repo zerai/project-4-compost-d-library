@@ -1,0 +1,55 @@
+paths:
+  - ./restaurant/core/src
+
+exclude_files:
+  - .*/tests/.*
+  - .*Test.*
+
+layers:
+  - name: Domain
+    collectors:
+      - type: directory
+        regex: Core/Domain/.*
+
+  - name: Application
+    collectors:
+      - type: directory
+        regex: Core/Application/.*
+
+  - name: Infrastructure
+    collectors:
+      - type: directory
+        regex: Core/Infrastructure/.*
+
+  - name: Vendor
+    collectors:
+      - type: bool
+        must:
+          - type: className
+            regex: .+\\.*
+        must_not:
+          - type: className
+            regex: ^Restaurant\\.*
+          - type: className
+            regex: ^CompostD\\.*
+          - type: className
+            regex: ^Assert\\.*
+          - type: className
+            regex: ^Ramsey\\Uuid\\.*
+
+  - name: Ramsey
+    collectors:
+      - type: bool
+        must:
+          - type: className
+            regex: ^Ramsey\\Uuid\\.*
+
+ruleset:
+  Domain:
+    - Ramsey
+  Application:
+    - Domain
+  Infrastructure:
+    - Domain
+    - Application
+    - Ramsey
