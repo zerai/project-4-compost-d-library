@@ -1,7 +1,11 @@
-/vendor/
-/var/
-.idea/
+/.idea
+/.vscode
+
 .php_cs.cache
 deptrac.phar
 .deptrac.cache
 phpunit.xml
+
+/var/
+/vendor/
+/tools/*/vendor/

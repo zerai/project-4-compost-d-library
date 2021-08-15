@@ -24,6 +24,11 @@
     "config": {
         "sort-packages": true
     },
+    "extra": {
+        "bamarni-bin": {
+            "target-directory": "tools"
+        }
+    },
     "autoload": {
         "psr-4": {
             "CompostD\\": "compostD/src/",
