@@ -33,6 +33,10 @@ jobs:
           tools: composer:v1
       - name: Install Composer dependencies
         run: composer update --${{ matrix.dependency-version }} --prefer-dist --no-progress --no-suggest --ansi
+      - name: Install Composer BIN dependencies
+        run: composer bin all install
+      - name: Run ecs
+        run: ./vendor/bin/ecs
       - name: Enable code coverage for PHP-7.4
         if: ${{ matrix.php == '7.4' && matrix.dependency-version == 'prefer-stable'}}
         run: echo "COVERAGE=1" >> $GITHUB_ENV
