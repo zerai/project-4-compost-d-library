@@ -37,6 +37,8 @@ jobs:
         run: composer bin all install
       - name: Run ecs
         run: ./vendor/bin/ecs
+      - name: Run phpstan
+        run: ./vendor/bin/phpstan
       - name: Enable code coverage for PHP-7.4
         if: ${{ matrix.php == '7.4' && matrix.dependency-version == 'prefer-stable'}}
         run: echo "COVERAGE=1" >> $GITHUB_ENV
