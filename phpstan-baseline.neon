@@ -1,0 +1,22 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Method CompostD\\\\Tests\\\\Aggregate\\\\DummyStateBasedAggregate\\:\\:releaseEvents\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: compostD/tests/Aggregate/DummyStateBasedAggregate.php
+
+		-
+			message: "#^Property CompostD\\\\Tests\\\\Aggregate\\\\DummyStateBasedAggregate\\:\\:\\$recordedEvents type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: compostD/tests/Aggregate/DummyStateBasedAggregate.php
+
+		-
+			message: "#^Method Restaurant\\\\Core\\\\Domain\\\\Model\\\\Table\\\\Table\\:\\:releaseEvents\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: restaurant/core/src/Domain/Model/Table/Table.php
+
+		-
+			message: "#^Property Restaurant\\\\Core\\\\Domain\\\\Model\\\\Table\\\\Table\\:\\:\\$recordedEvents type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: restaurant/core/src/Domain/Model/Table/Table.php
+

@@ -1,11 +1,20 @@
+includes:
+    - phpstan-baseline.neon
+
 parameters:
     level: max
     paths:
+        - compostD/
         - restaurant/
-        - compostD/tests/
+        - saasOvation/
     excludes_analyse:
         - var/
 
-includes:
-    - phpstan-baseline.neon
-    - vendor/phpstan/phpstan-phpunit/extension.neon
+    tmpDir: var/tools/phpstan/tmp
+
+    ignoreErrors:
+        #- '##'
+        # Excludes example message: '#Call to an undefined method [a-zA-Z0-9\\_]+::method\(\)#'
+
+        #- "#^Unreachable statement - code above always terminates.#"
+
