@@ -20,11 +20,11 @@ architecture-check: ## Run deptrac  (architecture check)
 
 .PHONY: cs-check
 cs-check: ## Run code style analysis (check and report)
-	php vendor/bin/php-cs-fixer fix --dry-run --diff
+	php vendor/bin/ecs
 
 .PHONY: cs-fix
 cs-fix: ## Run code style analysis (fix and report)
-	php vendor/bin/php-cs-fixer fix -v
+	php vendor/bin/ecs --fix
 
 .PHONY: test
 test: ## Run tests
