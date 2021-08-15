@@ -28,7 +28,11 @@
             "CompostD\\": "compostD/src/",
             "Restaurant\\Booking\\": "restaurant/booking/src/",
             "Restaurant\\Core\\": "restaurant/core/src/",
-            "Restaurant\\SharedKernel\\": "restaurant/sharedKernel/src/"
+            "Restaurant\\SharedKernel\\": "restaurant/sharedKernel/src/",
+            "SaasOvation\\Common\\": "saasOvation/Common/src/",
+            "SaasOvation\\AgilePm\\": "saasOvation/AgilePm/src/",
+            "SaasOvation\\Collaboration\\": "saasOvation/Collaboration/src/",
+            "SaasOvation\\IdentityAccess\\": "saasOvation/IdentityAccess/src/"
         }
     },
     "autoload-dev": {
@@ -36,7 +40,11 @@
             "CompostD\\Tests\\": "compostD/tests/",
             "Restaurant\\Core\\Tests\\": "restaurant/core/tests/",
             "Restaurant\\Booking\\Tests\\": "restaurant/booking/tests/",
-            "Restaurant\\SharedKernel\\Tests\\": "restaurant/sharedKernel/tests/"
+            "Restaurant\\SharedKernel\\Tests\\": "restaurant/sharedKernel/tests/",
+            "SaasOvation\\Common\\Tests\\": "saasOvation/Common/tests/",
+            "SaasOvation\\AgilePm\\Tests\\": "saasOvation/AgilePm/tests/",
+            "SaasOvation\\Collaboration\\Tests\\": "saasOvation/Collaboration/tests/",
+            "SaasOvation\\IdentityAccess\\Tests\\": "saasOvation/IdentityAccess/tests/"
         }
     }
 }
