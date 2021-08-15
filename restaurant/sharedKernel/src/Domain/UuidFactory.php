@@ -3,9 +3,6 @@
 
 namespace Restaurant\SharedKernel\Domain;
 
-
-
-
 use Ramsey\Uuid\UuidInterface;
 
 interface UuidFactory
