@@ -1,10 +1,10 @@
 /.idea
 /.vscode
 
-.php_cs.cache
 deptrac.phar
 .deptrac.cache
 phpunit.xml
+.phpunit.result.cache
 
 /var/
 /vendor/
