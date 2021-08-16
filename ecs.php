@@ -27,7 +27,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(BlankLineAfterNamespaceFixer::class);
     $services->set(NoUnusedImportsFixer::class);
     $services->set(OrderedImportsFixer::class);
-    $services->set(NoUnusedImportsFixer::class);
     $services->set(StrictComparisonFixer::class);
 
     $services->set(ArraySyntaxFixer::class)
